@@ -26,10 +26,6 @@ app.get('/', (req, res) => {
   ' instructions in the README to configure the Slack App and your environment variables.</p>');
 });
 
-/*
- * Endpoint to receive /helpdesk slash command from Slack.
- * Checks verification token and then creates a ticket.
- */
 app.post('/commands', (req, res) => {
   const { token, text, response_url, team_id } = req.body;
   const respond = responder(response_url);
